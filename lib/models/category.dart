@@ -2,7 +2,7 @@ import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
 
 class Category {
-  final int id;
+  final String id;
   final String title;
   final String imageURL;
 

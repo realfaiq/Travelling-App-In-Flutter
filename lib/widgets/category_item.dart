@@ -1,16 +1,24 @@
 import 'package:flutter/material.dart';
+import '../screens/categories_location_screen.dart';
 
 class CategoryItem extends StatelessWidget {
-  final int id;
+  final String id;
   final String title;
   final String imageURL;
 
   CategoryItem(this.id, this.title, this.imageURL);
 
+  void selectCategory(BuildContext ctx) {
+    Navigator.of(ctx).pushNamed(
+      CategoryLocationScreen.routeName,
+      arguments: {'id': id, 'title': title},
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
-        onTap: () {},
+        onTap: () => {selectCategory(context)},
         child: Card(
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
