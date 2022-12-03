@@ -1,5 +1,6 @@
-import 'package:expense_tracker/models/location.dart';
 import 'package:flutter/material.dart';
+import '../screens/location_details_screen.dart';
+import '../models/location.dart';
 
 class LocationItem extends StatelessWidget {
   final String id;
@@ -33,10 +34,14 @@ class LocationItem extends StatelessWidget {
     }
   }
 
+  void selectLocation(BuildContext ctx) {
+    Navigator.of(ctx).pushNamed(LocationDetailsScreen.routeName, arguments: id);
+  }
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
-        onTap: () {},
+        onTap: () => selectLocation(context),
         child: Card(
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
@@ -70,12 +75,18 @@ class LocationItem extends StatelessWidget {
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
+                SizedBox(
+                  height: 10,
+                ),
                 Text(
-                  'lorem ipsum is font of great delight. You can use it anywhere. It is a very good technique to use this and that',
+                  articleText,
                   style: Theme.of(context).textTheme.titleMedium,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   softWrap: true,
+                ),
+                SizedBox(
+                  height: 10,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

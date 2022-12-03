@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './screens/categories_screen.dart';
 import './screens/categories_location_screen.dart';
+import './screens/location_details_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -20,13 +21,15 @@ class _MyAppState extends State<MyApp> {
             textTheme: ThemeData.light().textTheme.copyWith(
                 titleLarge:
                     TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                titleMedium: TextStyle(fontSize: 10),
+                titleMedium:
+                    TextStyle(fontSize: 10, fontStyle: FontStyle.italic),
                 titleSmall: TextStyle(fontSize: 8))),
         // home: CategoriesScreen(),
         initialRoute: '/',
         routes: {
           '/': (ctx) => CategoriesScreen(),
           CategoryLocationScreen.routeName: (ctx) => CategoryLocationScreen(),
+          LocationDetailsScreen.routeName: (ctx) => LocationDetailsScreen(),
         });
   }
 }
