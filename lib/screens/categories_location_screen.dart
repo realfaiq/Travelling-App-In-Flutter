@@ -16,27 +16,19 @@ class CategoryLocationScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(title: Text('${categoryTitle}')),
-      body: Column(children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [],
-        ),
-        Expanded(
-          child: ListView.builder(
-            itemBuilder: (ctx, index) {
-              return LocationItem(
-                id: categorylocation[index].id,
-                title: categorylocation[index].title,
-                imageUrl: categorylocation[index].imageUrl,
-                articleText: categorylocation[index].articleText,
-                affordability: categorylocation[index].affordability,
-                time: categorylocation[index].time,
-              );
-            },
-            itemCount: categorylocation.length,
-          ),
-        )
-      ]),
+      body: ListView.builder(
+        itemBuilder: (ctx, index) {
+          return LocationItem(
+            id: categorylocation[index].id,
+            title: categorylocation[index].title,
+            imageUrl: categorylocation[index].imageUrl,
+            articleText: categorylocation[index].articleText,
+            affordability: categorylocation[index].affordability,
+            time: categorylocation[index].time,
+          );
+        },
+        itemCount: categorylocation.length,
+      ),
     );
   }
 }

@@ -1,8 +1,11 @@
+import 'package:expense_tracker/dummy_data.dart';
+
 import './screens/tabs_screen.dart';
 import 'package:flutter/material.dart';
 import './screens/categories_screen.dart';
 import './screens/categories_location_screen.dart';
 import './screens/location_details_screen.dart';
+import './dummy_data.dart';
 
 void main() => runApp(MyApp());
 
