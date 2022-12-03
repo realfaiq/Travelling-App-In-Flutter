@@ -14,7 +14,14 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'Explore Pakistan',
-        theme: ThemeData(primarySwatch: Colors.green),
+        theme: ThemeData(
+            primarySwatch: Colors.green,
+            accentColor: Colors.black54,
+            textTheme: ThemeData.light().textTheme.copyWith(
+                titleLarge:
+                    TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                titleMedium: TextStyle(fontSize: 10),
+                titleSmall: TextStyle(fontSize: 8))),
         // home: CategoriesScreen(),
         initialRoute: '/',
         routes: {
