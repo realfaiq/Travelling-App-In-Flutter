@@ -1,3 +1,4 @@
+import './screens/tabs_screen.dart';
 import 'package:flutter/material.dart';
 import './screens/categories_screen.dart';
 import './screens/categories_location_screen.dart';
@@ -27,7 +28,7 @@ class _MyAppState extends State<MyApp> {
         // home: CategoriesScreen(),
         initialRoute: '/',
         routes: {
-          '/': (ctx) => CategoriesScreen(),
+          '/': (ctx) => TabsScreen(),
           CategoryLocationScreen.routeName: (ctx) => CategoryLocationScreen(),
           LocationDetailsScreen.routeName: (ctx) => LocationDetailsScreen(),
         });
